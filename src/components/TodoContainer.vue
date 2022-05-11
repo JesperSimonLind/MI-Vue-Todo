@@ -28,7 +28,9 @@ export default class TodoContainer extends Vue {
   handleAddTodo(t: Todo) {
     this.TodoList.push(t);
   }
-  handleDeletedTask() {}
+  handleDeletedTask() {
+    console.log("Hej");
+  }
 }
 </script>
 
