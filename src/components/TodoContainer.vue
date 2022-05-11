@@ -1,21 +1,25 @@
 <template>
-  <CreateTodo @createTodo="handleAddTodo($event)" />
-  <div v-for="(Todo, i) in TodoList" :key="i">
-    {{ Todo.description }} status:{{ Todo.done }}
-    <button v-if="Todo.done">Undone</button>
-    <button v-else>Done</button>
-    <button>Delete</button>
+  <div class="container">
+    <CreateTodo @createTodo="handleAddTodo($event)" />
+    <TaskFunctions
+      @deleteTask="handleDeleteTask($event)"
+      v-for="t in TodoList"
+      :key="t"
+      :singleTask="t"
+    />
   </div>
 </template>
 
 <script lang="ts">
-import { Todo } from "@/models/Todo";
 import { Options, Vue } from "vue-class-component";
+import { Todo } from "@/models/Todo";
 import CreateTodo from "./CreateTodo.vue";
+import TaskFunctions from "./TaskFunctions.vue";
 
 @Options({
   components: {
     CreateTodo,
+    TaskFunctions,
   },
 })
 export default class TodoContainer extends Vue {
@@ -24,6 +28,7 @@ export default class TodoContainer extends Vue {
   handleAddTodo(t: Todo) {
     this.TodoList.push(t);
   }
+  handleDeletedTask() {}
 }
 </script>
 
