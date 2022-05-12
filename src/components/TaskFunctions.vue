@@ -1,17 +1,26 @@
 <template>
   <div class="container">
-    <p>{{ singleTask.description }} : {{ singleTask.done }}</p>
-    <button @click="changeStatus" v-if="singleTask.done">Undone</button>
-    <button @click="changeStatus" v-else>Done</button>
-    <button
-      @click="
-        () => {
-          handleDeleteTask();
-        }
-      "
-    >
-      Delete
-    </button>
+    <div class="taskContainer">
+      <p>{{ singleTask.description }} : {{ singleTask.done }}</p>
+      <button
+        class="btn btn--change"
+        @click="changeStatus"
+        v-if="singleTask.done"
+      >
+        Undone
+      </button>
+      <button class="btn btn--change" @click="changeStatus" v-else>Done</button>
+      <button
+        class="btn btn--delete"
+        @click="
+          () => {
+            handleDeleteTask();
+          }
+        "
+      >
+        Delete
+      </button>
+    </div>
   </div>
 </template>
 
@@ -33,4 +42,31 @@ export default class TaskFunctions extends Vue {
 }
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.btn--change {
+  background-color: #1ed760;
+  width: 50px;
+  height: 50px;
+}
+.btn--delete {
+  background-color: rgb(145, 2, 2);
+  width: 50px;
+  height: 50px;
+}
+.btn {
+  border: none;
+  color: white;
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.taskContainer {
+  display: flex;
+  gap: 15px;
+  font-size: 24px;
+}
+</style>
