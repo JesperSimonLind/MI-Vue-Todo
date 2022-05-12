@@ -2,7 +2,7 @@
   <div class="container">
     <CreateTodo @createTodo="handleAddTodo($event)" />
     <TaskFunctions
-      @deleteTask="handleDeleteTask($event)"
+      @deleteTask="handleDeletedTask"
       v-for="t in TodoList"
       :key="t"
       :singleTask="t"
@@ -28,8 +28,9 @@ export default class TodoContainer extends Vue {
   handleAddTodo(t: Todo) {
     this.TodoList.push(t);
   }
-  handleDeletedTask() {
-    console.log("Hej");
+  handleDeletedTask(todo: Todo) {
+    console.log("hej");
+    this.TodoList.splice(this.TodoList.indexOf(todo), 1);
   }
 }
 </script>

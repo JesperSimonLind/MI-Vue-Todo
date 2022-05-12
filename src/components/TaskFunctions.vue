@@ -23,7 +23,7 @@ export default class TaskFunctions extends Vue {
   @Prop() singleTask!: Todo;
 
   changeStatus() {
-    console.log("Du klcikade");
+    console.log("Du klickade");
     this.singleTask.done = !this.singleTask.done;
   }
 

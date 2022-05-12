@@ -5,7 +5,6 @@
       type="text"
       placeholder="Write a description"
       v-model="description"
-      @keypress.enter="addTodo"
     />
     <button @click="addTodo">Save</button>
   </form>
