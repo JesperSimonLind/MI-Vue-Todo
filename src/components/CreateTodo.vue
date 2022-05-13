@@ -1,10 +1,6 @@
 <template>
   <form class="createContainer" @submit.prevent="onSubmit">
-    <input
-      type="text"
-      placeholder="Write a description"
-      v-model="description"
-    />
+    <input type="text" placeholder="Write a task" v-model="description" />
     <button class="btn btn--save" @click="addTodo">Save</button>
   </form>
 </template>
