@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <div class="taskContainer">
-      <p>{{ singleTask.description }} : {{ singleTask.done }}</p>
+      <p :class="{ statusText: singleTask.done }">
+        {{ singleTask.description }}
+      </p>
       <button
         class="btn btn--change"
         @click="changeStatus"
@@ -63,7 +65,7 @@ export default class TaskFunctions extends Vue {
   align-items: center;
   justify-content: center;
   &:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 }
 
@@ -72,6 +74,10 @@ export default class TaskFunctions extends Vue {
   gap: 15px;
   font-size: 24px;
   align-items: center;
+}
+
+.statusText {
+  text-decoration: line-through;
 }
 
 @media only screen and (max-width: 768px) {
