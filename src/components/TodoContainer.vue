@@ -27,10 +27,18 @@ export default class TodoContainer extends Vue {
 
   handleAddTodo(t: Todo) {
     this.TodoList.push(t);
+    localStorage.setItem("Todo", JSON.stringify(this.TodoList));
   }
   handleDeletedTask(todo: Todo) {
-    console.log("hej");
     this.TodoList.splice(this.TodoList.indexOf(todo), 1);
+  }
+
+  mounted() {
+    if (localStorage.getItem("Todo") != null) {
+      this.TodoList = JSON.parse(localStorage.getItem("Todo") || "[]");
+    } else {
+      return;
+    }
   }
 }
 </script>

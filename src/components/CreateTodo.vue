@@ -19,7 +19,6 @@ export default class CreateTodo extends Vue {
   description = "";
 
   addTodo() {
-    console.log("Du klickade");
     this.$emit("createTodo", new Todo(this.description));
     this.description = "";
   }

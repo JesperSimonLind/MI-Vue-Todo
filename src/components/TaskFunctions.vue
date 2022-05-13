@@ -34,7 +34,6 @@ export default class TaskFunctions extends Vue {
   @Prop() singleTask!: Todo;
 
   changeStatus() {
-    console.log("Du klickade");
     this.singleTask.done = !this.singleTask.done;
   }
 
@@ -85,8 +84,5 @@ export default class TaskFunctions extends Vue {
     flex-direction: column;
     align-items: center;
   }
-}
-
-@media only screen and (min-width: 1024px) {
 }
 </style>
