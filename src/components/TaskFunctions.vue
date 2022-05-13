@@ -71,6 +71,7 @@ export default class TaskFunctions extends Vue {
   display: flex;
   gap: 15px;
   font-size: 24px;
+  align-items: center;
 }
 
 @media only screen and (max-width: 768px) {
