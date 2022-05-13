@@ -31,6 +31,7 @@ export default class TodoContainer extends Vue {
   }
   handleDeletedTask(todo: Todo) {
     this.TodoList.splice(this.TodoList.indexOf(todo), 1);
+    localStorage.setItem("Todo", JSON.stringify(this.TodoList));
   }
 
   mounted() {
