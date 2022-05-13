@@ -42,7 +42,7 @@ export default class TaskFunctions extends Vue {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .btn--change {
   background-color: #1ed760;
   width: 50px;
@@ -62,11 +62,24 @@ export default class TaskFunctions extends Vue {
   display: flex;
   align-items: center;
   justify-content: center;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .taskContainer {
   display: flex;
   gap: 15px;
   font-size: 24px;
+}
+
+@media only screen and (max-width: 768px) {
+  .taskContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
 }
 </style>

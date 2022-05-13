@@ -42,19 +42,19 @@ input {
 }
 
 .btn {
-  border: none;
-  color: white;
   height: 50px;
   width: 100px;
-  border-radius: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .createContainer {
   display: flex;
   gap: 15px;
   margin-bottom: 25px;
+}
+
+@media only screen and (max-width: 768px) {
+  .createContainer {
+    width: 80%;
+  }
 }
 </style>

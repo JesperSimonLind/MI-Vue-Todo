@@ -1,5 +1,6 @@
 <template>
-  <h1>Welcome to your Todo-List</h1>
+  <h1 class="titleText">Welcome to your Todo-List</h1>
+  <h1 class="mobileText">Todo-List</h1>
   <TodoContainer />
 </template>
 
@@ -28,7 +29,21 @@ body {
   color: white;
 }
 
-h1 {
+.titleText,
+.mobileText {
   font-size: 48px;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  .titleText {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .mobileText {
+    display: none;
+  }
 }
 </style>
