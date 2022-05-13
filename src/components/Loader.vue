@@ -38,7 +38,7 @@ export default class Loader extends Vue {}
   height: 20px;
   border-radius: 20px;
   background: #1ed760;
-  animation: loading 2s forwards cubic-bezier(0, 0, 0, 0);
+  animation: loading 1.25s forwards cubic-bezier(0, 0, 0, 0);
 }
 
 @keyframes loading {

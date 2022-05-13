@@ -24,7 +24,7 @@ export default class App extends Vue {
   mounted() {
     setTimeout(() => {
       this.isLoading = !this.isLoading;
-    }, 2000);
+    }, 1250);
   }
 }
 </script>
