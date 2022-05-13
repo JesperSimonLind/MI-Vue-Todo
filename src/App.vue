@@ -1,23 +1,37 @@
 <template>
-  <h1 class="titleText">Welcome to your Todo-List</h1>
-  <h1 class="mobileText">Todo-List</h1>
-  <TodoContainer />
+  <Loader v-if="isLoading" />
+  <div v-else>
+    <h1 class="titleText">Welcome to your Todo-List</h1>
+    <h1 class="mobileText">Todo-List</h1>
+    <TodoContainer />
+  </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
+import Loader from "./components/Loader.vue";
 import TodoContainer from "./components/TodoContainer.vue";
 
 @Options({
   components: {
     TodoContainer,
+    Loader,
   },
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  isLoading = true;
+
+  mounted() {
+    setTimeout(() => {
+      this.isLoading = !this.isLoading;
+    }, 2000);
+  }
+}
 </script>
 
 <style lang="scss">
 body {
+  font-family: "Courier New", Courier, monospace;
   height: 100vh;
   background-color: rgb(15, 15, 15);
   padding: 0px;
